@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function DogForm() {
+function DogForm({handleAddDog}) {
   const form = document.getElementById('form');
   const [name, setName] = useState('');
   const [breed, setBreed] = useState('');
@@ -24,9 +24,9 @@ function DogForm() {
         trait,
       }),
     }).then(resp=>resp.json())
-      .then(dog =>{
+      .then(newDog =>{
 
-      handleDog(dog); 
+      handleAddDog(newDog); 
       
     });
       
